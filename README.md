@@ -18,7 +18,7 @@
 9. File operations : r/w
 9. Sequences : dictionary, tuple
 9. Class : constructor, \_\_str\_\_, methods, instantiation
-9. Regular Expression
+9. Regular Expressions
 
 
 ## Exercises
