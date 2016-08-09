@@ -1,24 +1,28 @@
+# PYTHON 3
+
+
+> Express your will programmatically with Python 3
 
 ## Syllabus
 
-1. Introduction & language basics
-2. Some background to Python
-2. Value, types, expressions, and statements
-2. Data types (Lists, tuples, and dictionaries)
-2. Functions
-2. Class
-2. Regular Expression
-2. New style class
-2. Decorator, Generator
-2. Files, modules, directories and packages
-2. Special keywords like with, future
-2. Unittest
+
+1. Introduction 
+2. Value, types, expressions
+3. Scalar data types (int, float), operations
+4. String Manipulation
+4. Conditional statements
+5. Loop
+6. List : add, slice, sort, comprehension
+7. Functions : vanilla, default arguments, anonymous
+8. Import : math operations
+9. File operations : r/w
+9. Sequences : dictionary, tuple
+9. Class : constructor, \_\_str\_\_, methods, instantiation
+9. Regular Expression
 
 
 ## Exercises
 
-
-### Introduction & Language Basics
 
 1. **intro**, **print** Print the name of your batch mates; one name per line. 
 2. **value**, **expression** Calculate y = mx + c, given (m,x,c).
@@ -38,5 +42,7 @@
 16. **import** [1] Rounding a decimal [2] Volume of sphere [3] Roots of a quadratic expression
 17. **file** [1] Write the names of your batch mates, followed by the lengths of their names, to a file [2] Print top ten most liked quotes, line by line [3] Read file, extract words into a list
 18. **dict**, **tuple** Create a dictionary that maps words to indices
-19. **class** [1] Create a Quote object for each quote read from file [2] Sort the list based on Quote.word_count [3] Print the top 10 quotes
+19. **class** [1] Create a Quote object for each quote read from file [2] Sort the list based on Quote.word\_count [3] Print the top 10 quotes
 20. **regex** Find the links to other wikipedia articles in 'wiki-transhumanism.html'
+
+![](/exercises/regex.png)
