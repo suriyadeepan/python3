@@ -17,6 +17,11 @@ print(ilist[:7:3])
 # get element by index
 print(ilist[4])
 
+# Negative indexing
+print(ilist[-1]) # last element
+print(ilist[-2:]) # last 2 elements
+print(ilist[:-2]) # all but last 2 elements
+
 
 # Try the above with mystr
 mystr = 'el psy congroo'
@@ -36,6 +41,13 @@ print(mystr[:7:3])
 
 # get element by index
 print(mystr[4])
+
+
+# Negative indexing
+print(mystr[-1]) # last element
+print(mystr[-2:]) # last 2 elements
+print(mystr[:-2]) # all but last 2 elements
+
 
 # now that you've mastered slicing, lets solve a few problems
 # TODO : 
