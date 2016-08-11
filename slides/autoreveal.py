@@ -3,6 +3,8 @@ import re
 import os
 import shutil
 
+global meta 
+meta = None
 
 def util_copy_and_overwrite(from_path, to_path):
     if os.path.exists(to_path):
@@ -58,19 +60,57 @@ def extract_content(content, index):
     
     return extract_unique()
 
-def render_init(templates = './templates', build = './build', log=False):
+def render_init(meta, header_val, heading, body, templates = './templates', build = './build', log=False):
     header = templates + '/header.content'
     footer = templates + '/footer.content'
-    body   = templates +   '/body.content'
 
     if log:
         print('Copying templates to build/')
     # copy templates to build/
     util_copy_and_overwrite(templates,build)
+    util_copy_and_overwrite(meta['res'],'build/res')
     
     # open file index.html in build
     with open(build + '/index.html', 'w') as findex: # open in (over)write mode
-        findex.write(get_content(header))
+        # get content
+        header_content = fill_header(get_content(header),header_val)
+        heading_content = fill_heading(heading)
+        body_content = fill_body(body)
+        findex.write(header_content)
+        findex.write(heading_content)
+        findex.write(body_content)
+        with open(footer,'r') as f:
+            foot_content = f.read()
+        findex.write(foot_content)
+
+def fill_header(template, header):
+    lines = template.split('\n')
+    for i in range(len(lines)):
+        if lines[i].startswith('x---'):
+            break
+    lines[i] = '\t\t<link rel="stylesheet" href="css/theme/serif.css" id="{}">'.format(header['theme'])
+    body_open = '\n<body>\n<div class="reveal">\n<div class="slides">\n'
+                                        
+    return '\n'.join(lines) + body_open
+
+def fill_heading(heading):
+    title = '<h1>{}</h1>'.format(heading['title'])
+    author = '<a href = "{0}">{1}</a>'.format(heading['web'],heading['author'])
+    return '\n<section>\n{0}\n{1}\n</section>'.format(title,author)
+
+def get_section(sec_type, sec_val):
+    sec_content = get_content(meta['md'] + '/' + sec_val)
+    md_template = '<section data-markdown>\n<script type="text/template">\n'\
+            '{}\n</script></section>'.format(sec_content)
+    return md_template
+
+
+def fill_body(body):
+    content = '' 
+    for sect,secv in body:
+        content += '\n' + get_section(sect,secv)
+    return content + '\n'
+    
 
 
 if __name__ == '__main__':
@@ -83,7 +123,6 @@ if __name__ == '__main__':
     content = get_content_as_list(filename)
     # split sections 
     tags = split_sections(content) 
-    #print(tags)
     # get meta data
     meta = extract_content(content,tags['meta'])
     # get header information
@@ -94,7 +133,7 @@ if __name__ == '__main__':
     body = extract_content(content,tags['body'])
 
     # render
-    render_init()
+    render_init(meta,header,heading,body)
 
 
 
