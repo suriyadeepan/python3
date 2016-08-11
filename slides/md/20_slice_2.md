@@ -1,0 +1,3 @@
+## Slicing
+
+![](res/slice.png)
