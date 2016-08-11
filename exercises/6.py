@@ -1,5 +1,5 @@
 a,b,c,d,e,f = 0, 1, 2.34, '5 six seven', '', None
-# find out boolean of x,y,z
+# find out boolean of a,b,c,d,e,f
 print('Bool(a) : {}'.format(bool(a)))
 x = 2
 y = 3
