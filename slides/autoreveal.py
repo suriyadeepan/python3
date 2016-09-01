@@ -111,7 +111,29 @@ def fill_body(body):
         content += '\n' + get_section(sect,secv)
     return content + '\n'
     
+def expand_md(md_files):
+    for sect, secv in md_files:
+        if 'md' in sect:
+            # convert content to list
+            lines = get_content(meta['md'] + '/' + secv).split('\n')
+            # check for code &name.py&
+            for i in range(len(lines)):
+                if re.match('&.+&',lines[i]):
+                    # use index to replace line with code
+                    code_file = meta['code'] + '/' + lines[i].replace('&','').replace(' ','')
+                    code_content = get_content(code_file).split('\n')
+                    # replace ith element
+                    lines[i] = '```'
+                    code_content.append('```')
+                    # add code to list
+                    mod_content = '\n'.join(lines[:i+1] + code_content + lines[i+1:])
+                    # (over)write to file
+                    with open(meta['md'] + '/' + secv, 'w') as f:
+                        f.write(mod_content)
+                    # break now
+                    break
 
+            
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
@@ -132,14 +154,7 @@ if __name__ == '__main__':
     # body 
     body = extract_content(content,tags['body'])
 
+    expand_md(body)
+
     # render
     render_init(meta,header,heading,body)
-
-
-
-
-
-
-
-
-
