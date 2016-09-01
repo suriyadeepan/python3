@@ -88,7 +88,7 @@ def fill_header(template, header):
     for i in range(len(lines)):
         if lines[i].startswith('x---'):
             break
-    lines[i] = '\t\t<link rel="stylesheet" href="css/theme/serif.css" id="{}">'.format(header['theme'])
+    lines[i] = '\t\t<link rel="stylesheet" href="css/theme/{}.css" id="theme">'.format(header['theme'])
     body_open = '\n<body>\n<div class="reveal">\n<div class="slides">\n'
                                         
     return '\n'.join(lines) + body_open
@@ -137,6 +137,7 @@ def expand_md(md_files):
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
+        print('>> Usage : python3 autoreveal.py config.ini')
         sys.exit()
     
     # get markdown filename
