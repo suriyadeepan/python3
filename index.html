@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Python 3</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<!-- <link rel="stylesheet" href="css/theme/serif.css" id="theme"> -->
+		<link rel="stylesheet" href="css/theme/serif.css" id="blood">
+
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section>
+<h1>Python 3</h1>
+<a href = "http://suriyadeepan.github.io">Suriyadeepan Ramamoorthy</a>
+</section>
+<section data-markdown>
+<script type="text/template">
+## Introduction
+
+* widely used **high-level**, **interpreted**, **dynamic** programming language
+* emphasizes code **readability**
+* syntax allows programmers to **express** concepts in fewer lines of code
+
+
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## [Guido von Rossum](https://en.wikipedia.org/wiki/Guido_van_Rossum)
+
+![](res/license.jpg)
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## Pythonic Thinking
+
+* be explicit 
+* simple over complex
+* maximize readability
+
+
+[PEP 8 style guide](https://www.python.org/dev/peps/pep-0008/)
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## How do we proceed?
+
+1. Introduce a python concept
+2. Describe it
+3. Demonstration
+4. Practice the code snippets in exercises/
+5. Solve problems
+6. My solution
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## Python is EASY
+
+![](res/easy.jpg)
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## Hello World
+
+
+```python
+print('hello world')
+print('hello {}'.format('world'))
+print('hello {0}, {1}, {2} and {3}'.format('Bruce',
+					'Clark','Martha','Martha'))
+```
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+### Print the name of your batch mates; one name per line. 
+
+```
+print('{0}\n{1}\n{2}'.format('John Doe','John Smith', 'Jane Doe'))
+
+```
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## Values
+
+* **int** 	  : 7 
+* **float**   : 12.46 
+* **string**  : "try this" = 'try this' 
+* **bool**		: True/False
+* **comment** : # comments are for people who read your code to understand
+* **multiline comment**
+
+'''
+Be more expressive. <br>
+Descibe in multiple <br>
+lines. <br>
+'''
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+# Arithmetics I
+
+```
+x = 2
+y = 3
+print('Sum :  {}'.format(x+y))
+z = x - y
+print('Diff : {}'.format(z))
+print('Prod : {}'.format(x*y))
+print('Quo  : {}'.format(x/y))
+
+```
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+### Calculate y = mx + c , given (m,x,c)
+
+```
+print('{0}\n{1}\n{2}'.format('John Doe','John Smith', 'Jane Doe'))
+
+```
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## Types
+
+1. **int**			: Integer
+2. **float**		: Decimal
+3. **bool**			: Boolean [True/False]
+4. **str**			: String
+5. **list**			: List of any other datatypes [HETEROGENOUS]
+6. **tuple**		: Tuple [Non-mutable List]
+7. **dict**			: Dictionary [Key-Value pairs]
+8. **function** : Function
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## Strings
+
+* Sequence of characters (not really)
+* A character is also a string
+* Appreciate the difference between '152' and 152
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## String Operations I
+
+* len(string)
+* string.find(substring)
+* lower/upper(string)
+* string.split(' ')
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## Logical Operations
+
+1. less than : **<**
+2. greater than : **>**
+3. greater than or equal to : **>=**
+4. less than or equal to : **<=**
+5. **and**	: logical and
+6. **or**		: logical or
+7. **not**	: logical not
+
+[Bitwise Operations](https://wiki.python.org/moin/BitwiseOperators)
+
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## Conditional Statements
+
+* IF...ELIF...ELSE
+* Never forget the INDENTATION
+* Nested IF 
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## WHILE
+
+1. Initialize the variable
+2. Check condition
+3. Increment (change) the variable in a meaningful way
+4. Avoid infinite loops
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## FOR
+
+1. Iterate/Go through items in a List
+2. For each item in a list, do an operation once
+3. Stop loop when the list ends
+4. Understand **range( )** function
+5. **item** is a variable that holds the value of current item in list
+6. Name of **item** is arbitrary
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## LIST
+
+1. **Heterogenous** collection of items
+2. type : list
+3. Each item has a type. Each item can be of any type.
+4. A list can be an item in another list
+5. Get item by index : list[**index**] = item
+6. **index** ranges from 0 to length of the list
+7. **len**(list) : lenght of the list
+8. NEVER USE 'list' AS YOUR VARIABLE'S NAME
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## List Operations
+
+1. len(list)
+2. list.append(item)
+3. list.extend(list2)
+4. list1 + list2 : operator overloading
+5. list.index(item)
+6. max(list) / min(list)
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## Slicing
+
+1. **a[start:end]** : items start through end-1
+2. **a[start:]**    : items start through the rest of the array
+3. **a[:end]**      : items from the beginning through end-1
+4. **a[:]**         : a copy of the whole array
+5. **a[-1]**    		: last item in the array
+6. **a[-2:]**   		: last two items in the array
+7. **a[:-2]**   		: everything except the last two items
+8. **a[low:high:stride]** : **stride** is the amount by which the index increases
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## Slicing
+
+![](res/slice.png)
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## Functions
+
+1. Notice the INDENTATION
+2. Take multiple arguments
+3. Return multiple values
+4. Default arguments
+5. Nested functions
+6. Anonymous function : **lambda**
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## Sorting
+
+1. Appreciate the difference between **list.sort()** and **sorted(list)**
+2. **reverse = True**
+3. Custom key sorting : **key=len**
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## List Comprehension
+
+1. **Map** : [ **operation\_on**(item) for **item** in **a\_list** ]
+2. Iterate through the list
+3. Take each item and convert it into something else
+4. Map list to another list
+5. **Filter** : [ **operation\_on**(item) for **item** in **a\_list** if **condition\_on(item)**]
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## import
+
+1. Import external module : **import math**
+2. Use : math.ceil( ), math.floor( )
+3. Import a function from module : **from math import floor, sqrt**
+4. Use : ceil( ), floor( )
+5. Import external module as : **import math as M**
+6. Use : M.ceil( ), M.floor( )
+7. Import function from module, as : **from math import floor as f**
+8. Use : f( )
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## File Operations
+
+1. Write mode 	: 'w' (overwrites)
+2. Append mode	: 'a'
+3. Read mode		: 'r'
+4. Write/Append creates file if necessary
+5. Open('filename') returns a **file handle**
+6. Use this handle to write to/read from file
+7. file\_handle.close()
+8. Shorthand : **with...as**
+9. **f.read()** vs **f.readline()**  
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## Dictionary
+
+1. DO NOT USE **dict** AS A VARIABLE NAME
+2. Initialize an empty dictionary : d1 = { }
+3. Add values d1[key] = value
+4. Key can be anything **except a List**
+5. Value can be anything.
+6. d1.keys() : a list
+7. d1.values() : a list
+8. Iterating through items : **for key, value in d1.items():**
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## Tuples
+
+1. Immutable lists
+2. Notice the use of paranthesis **(...)**
+3. Fun fact : (1) != (1,)
+4. Slicing, Indexing works the same way as list
+5. tuple(alist) : return a tuple of the list
+
+</script></section>
+<section data-markdown>
+<script type="text/template">
+## OOP
+
+1. Objects are encapsulation of variables (and other objects) and functions
+2. Consider the class **Rectangle**
+3. Attributes : **length**, **breadth**
+4. Methods 		: **get\_area**, **get\_perimeter**
+5. **self** argument : instance of class itself ( **this** in java )
+6. **__init__** : constructor
+7. Creating an instance : **my\_rect = Rectangle(w,h)**
+8. Calling a method : **area = my\_rect.get_area()**
+
+</script></section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
